@@ -18,7 +18,7 @@ iter = 1500; burn = 500;
 # asv_mcmc: function to implement MCMC for SV model with leverage
 # asv_mcmc(return vecor, # of iterations, # of burn-in period)
 # return: 
-out  = asv_mcmc(Y, iter, burn)
+out  = asv_mcmc(Y, nsim, burn)
 vmu  = out[[1]]; vphi = out[[2]]; vsigma_eta =  out[[3]]; vrho = out[[4]]; 
 mh   = out[[5]];
 
