@@ -27,7 +27,7 @@ ReportMCMC(cbind(mh[,500], mh[,1000],mh[,1500]), vname=c(expression(h[500]), exp
 
 mh_ci = matrix(0, nrow = nobs, ncol = 3)
 for(i in 1:nobs){
-  mh_ci[i,1:3] = t(quantile(mh[1:iter,i],c(0.025,0.5, 0.975)))
+  mh_ci[i,1:3] = t(quantile(mh[1:nsim,i],c(0.025,0.5, 0.975)))
 }
 
 library(ggplot2)
