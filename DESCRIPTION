@@ -1,0 +1,11 @@
+Package: ASV
+Type: Package
+Title: Stochastic Volatility models with or without leverage
+Version: 1.0
+Date: 2022-05-21
+Author: Yasuhiro Omori
+Maintainer: <omori.yasuhiro@gmail.com>
+Description:  This package implements the efficient MCMC estimation of stochastic volatility model with and without leverage. Further, it computes the logarithm of the likelihood given parameter using Monte Carlo filters.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.7)
+LinkingTo: Rcpp, RcppArmadillo

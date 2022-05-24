@@ -1,0 +1,61 @@
+// asv.h
+// written by 
+// Ryuji Hashimoto and Yasuhiro Omori (University of Tokyo)
+//
+//******* Global variables: fixed constants ******//
+ /* For mixture approximation */
+arma::vec p, m, v, v2, a, b;
+
+ /* For hyper-parameters for prior distributions */
+double a_0, b_0, n_0, S_0, mu_0, sigma_0;
+
+ /* For dependent variables */
+ //   y_t* = log(y_t^2 + small const)
+ //   d_t = 1 if y_t* > 0, d_t = -1 o.w.
+arma::vec Y, Y_star; 
+
+/* Sample size */
+int T;
+//******* Global variables***********************//
+ /* Compute the acceptance rate in MH algorithm */
+double cAccH, cAccTheta, cRep;
+//*********************************************//
+
+// [[Rcpp::export]]
+arma::vec sv_sample_s(arma::vec h, arma::vec theta);
+
+// [[Rcpp::export]]
+Rcpp::List sv_kalman_filter(arma::vec s, arma::vec theta);
+
+// [[Rcpp::export]]
+arma::vec sv_sim_smoother(arma::vec s, arma::vec theta);
+
+// [[Rcpp::export]]
+double sv_loglikelihood(arma::vec s, arma::vec theta);
+
+// [[Rcpp::export]]
+double sv_loglikelihood_theta(arma::vec s, arma::vec theta);
+
+// [[Rcpp::export]]
+double sv_theta_post_max(arma::vec x, arma::vec h);
+
+// [[Rcpp::export]]
+arma::vec sv_deriv1(arma::vec x, arma::vec h);
+
+// [[Rcpp::export]]
+arma::mat sv_deriv2(arma::vec x, arma::vec h);
+
+// [[Rcpp::export]]
+arma::vec sv_Opt(arma::vec x, arma::vec h);
+
+// [[Rcpp::export]]
+arma::vec sv_sample_theta(arma::vec h, arma::vec theta);
+
+// [[Rcpp::export]]
+arma::vec sv_sample_h(arma::vec s, arma::vec h, arma::vec theta);
+
+// [[Rcpp::export]]
+double sv_particle_filter(double mu, double phi, double sigma_eta, double rho, arma::vec Y,  int I);
+
+// [[Rcpp::export]]
+double sv_apf(double mu, double phi, double sigma_eta, double rho, arma::vec Y, int I);
