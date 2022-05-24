@@ -6,4 +6,4 @@ Install ASV package as follows:
 library(devtools)
 install_github("omori-yasuhiro/ASV")
 ```
-The examples are given in Example folder.
+The examples are given in Examples folder.
