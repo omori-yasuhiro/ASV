@@ -13,7 +13,7 @@ for(i in 1:nobs){
   h   = mu + phi * (h-mu) + eta
   Y   = append(Y, y)
 }
-iter = 1500; burn = 500;
+nsim = 2000; burn = 500;
 
 # asv_mcmc: function to implement MCMC for SV model with leverage
 # asv_mcmc(return vecor, # of iterations, # of burn-in period)
@@ -37,7 +37,7 @@ ggplot()+geom_line(aes(x=mydate, y=mh_ci[,1], color="95%L"),size=1)+geom_line(ae
 # Particle filter: Log likelihood given theta = (mu, phi, sigma_eta)
 mu = 0; phi = 0.97; sigma_eta = 0.3; rho = -0.3;
 # Number of Particles
-npart = 1000
+npart = 5000
 # repeat m times to compute the standard error of the estimate
 m  = 5; loglik = rep(0, m)
 
