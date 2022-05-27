@@ -129,7 +129,7 @@ Rcpp::List sv_mcmc(arma::vec return_vector, // Return vector
     cRep = cRep + 1;
   }
   Rprintf("Acceptance Rate for h     = %8.4f \n", cAccH/cRep*100);
-  Rprintf("Acceptance Rate for theta = %8.4f \n", cAccTheta/cRep*100);
+  Rprintf("Acceptance Rate for (mu,phi,sigma_eta) = %8.4f \n", cAccTheta/cRep*100);
   
   result = Rcpp::List::create(mu_s, phi_s, sigma_eta_s, h_s);
   return(result);
@@ -694,7 +694,7 @@ Rcpp::List asv_mcmc(arma::vec return_vector, // Return vector
     cRep = cRep + 1;
   }
   Rprintf("Acceptance Rate for h     = %8.4f \n", cAccH/cRep*100);
-  Rprintf("Acceptance Rate for theta = %8.4f \n", cAccTheta/cRep*100);
+  Rprintf("Acceptance Rate for (mu,phi,sigma_eta,rho) = %8.4f \n", cAccTheta/cRep*100);
   
   result = Rcpp::List::create(mu_s, phi_s, sigma_eta_s, rho_s, h_s);
   

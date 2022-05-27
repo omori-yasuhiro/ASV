@@ -29,37 +29,26 @@ double cAccH, cAccTheta, cRep;
 // Stochastic volatility model without leverage //
 //**********************************************//
 
-// [[Rcpp::export]]
 arma::vec sv_sample_s(arma::vec h, arma::vec theta);
 
-// [[Rcpp::export]]
 Rcpp::List sv_kalman_filter(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 arma::vec sv_sim_smoother(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double sv_loglikelihood(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double sv_loglikelihood_theta(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double sv_theta_post_max(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec sv_deriv1(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::mat sv_deriv2(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec sv_Opt(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec sv_sample_theta(arma::vec h, arma::vec theta);
 
-// [[Rcpp::export]]
 arma::vec sv_sample_h(arma::vec s, arma::vec h, arma::vec theta);
 
 // [[Rcpp::export]]
@@ -72,40 +61,28 @@ double sv_apf(double mu, double phi, double sigma_eta, arma::vec Y, int I);
 // Stochastic volatility model with leverage    //
 //**********************************************//
 
-// [[Rcpp::export]]
 arma::vec asv_sample_s(arma::vec h, arma::vec theta);
 
-// [[Rcpp::export]]
 Rcpp::List asv_kalman_filter(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 arma::vec asv_sim_smoother(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double asv_loglikelihood(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double asv_loglikelihood_theta(arma::vec s, arma::vec theta);
 
-// [[Rcpp::export]]
 double asv_theta_post_max(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec asv_deriv1(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::mat asv_deriv2(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec asv_Opt(arma::vec x, arma::vec h);
 
-// [[Rcpp::export]]
 arma::vec asv_sample_theta(arma::vec h, arma::vec theta);
 
-// [[Rcpp::export]]
 arma::vec asv_sample_h(arma::vec s, arma::vec h, arma::vec theta);
 
-// [[Rcpp::export]]
 arma::vec asv_mysample(arma::vec h, int I, arma::vec prob);
 
 // [[Rcpp::export]]

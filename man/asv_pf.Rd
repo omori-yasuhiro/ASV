@@ -1,12 +1,12 @@
 \name{asv_pf}
 \alias{asv_pf}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Particle filter to compute the log likelihood for stochastic volatility 
-models with leverage
+\title{Particle filter for stochastic volatility models with leverage
 %%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
+The function computes the log likelihood given (mu, phi, sigma_eta, rho) for stochastic volatility models with leverage  (asymmetric stochastic volatility models).
 }
 \usage{
 asv_pf(mu, phi, sigma_eta, rho, Y, I)
@@ -26,10 +26,10 @@ asv_pf(mu, phi, sigma_eta, rho, Y, I)
   \item{I}{Number of particles to approximate the filtering density.
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
-\value{Logarithm of likelihood of Y given parameters (mu, phi, sigma_eta, rho)
+%}
+\value{Logarithm of the likelihood of Y given parameters (mu, phi, sigma_eta, rho)
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -40,23 +40,29 @@ asv_pf(mu, phi, sigma_eta, rho, Y, I)
 %% ~put references to the literature/web site here ~
 Omori, Y., Chib, S., Shephard, N., and J. Nakajima (2007), "Stochastic volatility model with leverage: fast and efficient likelihood inference," Journal of Econometrics, 140-2, 425-449.
 
-Takahashi, M., Omori, Y. and T. Watanabe (2022+), Realized volatility and stochastic volatility models. JSS Research Series in Statistics, in press.
+Takahashi, M., Omori, Y. and T. Watanabe (2022+), Stochastic volatility and  realized stochastic volatility models. JSS Research Series in Statistics, in press. Springer, Singapore.
 }
-\author{
-Yasuhiro Omori
-%%  ~~who you are~~
-}
-\note{
+\author{Yasuhiro Omori}
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
+nobs = 1000;
 mu = 0; phi = 0.97; sigma_eta = 0.3; rho = -0.3;
+h  = 0;   Y = c();
+for(i in 1:nobs){
+  eps = rnorm(1, 0, 1)
+  eta = rho*sigma_eta*eps + sigma_eta*sqrt(1-rho^2)*rnorm(1, 0, 1)
+  y   = eps * exp(0.5*h)
+  h   = mu + phi * (h-mu) + eta
+  Y   = append(Y, y)
+}
 npart = 5000 
 # Repeat m times to compute the standard error of the estimate
 m  = 10; loglik = rep(0, m)

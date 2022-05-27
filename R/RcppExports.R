@@ -9,104 +9,12 @@ asv_mcmc <- function(return_vector, nSim = NULL, nBurn = NULL, vHyper = NULL) {
     .Call(`_ASV_asv_mcmc`, return_vector, nSim, nBurn, vHyper)
 }
 
-sv_sample_s <- function(h, theta) {
-    .Call(`_ASV_sv_sample_s`, h, theta)
-}
-
-sv_kalman_filter <- function(s, theta) {
-    .Call(`_ASV_sv_kalman_filter`, s, theta)
-}
-
-sv_sim_smoother <- function(s, theta) {
-    .Call(`_ASV_sv_sim_smoother`, s, theta)
-}
-
-sv_loglikelihood <- function(s, theta) {
-    .Call(`_ASV_sv_loglikelihood`, s, theta)
-}
-
-sv_loglikelihood_theta <- function(s, theta) {
-    .Call(`_ASV_sv_loglikelihood_theta`, s, theta)
-}
-
-sv_theta_post_max <- function(x, h) {
-    .Call(`_ASV_sv_theta_post_max`, x, h)
-}
-
-sv_deriv1 <- function(x, h) {
-    .Call(`_ASV_sv_deriv1`, x, h)
-}
-
-sv_deriv2 <- function(x, h) {
-    .Call(`_ASV_sv_deriv2`, x, h)
-}
-
-sv_Opt <- function(x, h) {
-    .Call(`_ASV_sv_Opt`, x, h)
-}
-
-sv_sample_theta <- function(h, theta) {
-    .Call(`_ASV_sv_sample_theta`, h, theta)
-}
-
-sv_sample_h <- function(s, h, theta) {
-    .Call(`_ASV_sv_sample_h`, s, h, theta)
-}
-
 sv_pf <- function(mu, phi, sigma_eta, Y, I) {
     .Call(`_ASV_sv_pf`, mu, phi, sigma_eta, Y, I)
 }
 
 sv_apf <- function(mu, phi, sigma_eta, Y, I) {
     .Call(`_ASV_sv_apf`, mu, phi, sigma_eta, Y, I)
-}
-
-asv_sample_s <- function(h, theta) {
-    .Call(`_ASV_asv_sample_s`, h, theta)
-}
-
-asv_kalman_filter <- function(s, theta) {
-    .Call(`_ASV_asv_kalman_filter`, s, theta)
-}
-
-asv_sim_smoother <- function(s, theta) {
-    .Call(`_ASV_asv_sim_smoother`, s, theta)
-}
-
-asv_loglikelihood <- function(s, theta) {
-    .Call(`_ASV_asv_loglikelihood`, s, theta)
-}
-
-asv_loglikelihood_theta <- function(s, theta) {
-    .Call(`_ASV_asv_loglikelihood_theta`, s, theta)
-}
-
-asv_theta_post_max <- function(x, h) {
-    .Call(`_ASV_asv_theta_post_max`, x, h)
-}
-
-asv_deriv1 <- function(x, h) {
-    .Call(`_ASV_asv_deriv1`, x, h)
-}
-
-asv_deriv2 <- function(x, h) {
-    .Call(`_ASV_asv_deriv2`, x, h)
-}
-
-asv_Opt <- function(x, h) {
-    .Call(`_ASV_asv_Opt`, x, h)
-}
-
-asv_sample_theta <- function(h, theta) {
-    .Call(`_ASV_asv_sample_theta`, h, theta)
-}
-
-asv_sample_h <- function(s, h, theta) {
-    .Call(`_ASV_asv_sample_h`, s, h, theta)
-}
-
-asv_mysample <- function(h, I, prob) {
-    .Call(`_ASV_asv_mysample`, h, I, prob)
 }
 
 asv_pf <- function(mu, phi, sigma_eta, rho, Y, I) {
