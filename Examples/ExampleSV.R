@@ -34,10 +34,10 @@ ggplot()+geom_line(aes(x=mydate, y=mh_ci[,1], color="95%L"),size=1)+geom_line(ae
 
 # Particle filter: Log likelihood given theta = (mu, phi, sigma_eta)
 mu = 0; phi = 0.97; sigma_eta = 0.3;
-npart = 1000 # Number of Particles
+npart = 5000 # Number of Particles
 
 # Repeat m times to compute the standard error of the estimate
-m  = 5; loglik = rep(0, m)
+m  = 10; loglik = rep(0, m)
 for(i in 1:m){
   loglik[i] = sv_pf(mu, phi, sigma_eta, Y, npart)
 }
