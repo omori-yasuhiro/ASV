@@ -1,9 +1,16 @@
 # ASV
-Stochastic Volatility models with or without leverage
+Stochastic Volatility Models with or without Leverage
+
+The efficient MCMC estimation of stochastic volatility models with and without leverage (asymmetric and symmetric stochastic volatility models). Further, it computes the logarithm of the likelihood given parameters using particle filters.
 
 Install ASV package as follows:
 ```
 library(devtools)
 install_github("omori-yasuhiro/ASV")
 ```
-The examples are given in Examples folder.
+
+```
+install.packages("ASV")
+library(ASV)
+```
+
