@@ -8,7 +8,7 @@ Install ASV package as follows:
 library(devtools)
 install_github("omori-yasuhiro/ASV")
 ```
-
+or from CRAN,
 ```
 install.packages("ASV")
 library(ASV)
